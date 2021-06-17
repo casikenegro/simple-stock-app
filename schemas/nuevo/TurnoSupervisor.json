@@ -1,0 +1,131 @@
+[
+    {
+      "name": "id",
+      "dbType": "increments",
+      "htmlType": "",
+      "validations": "",
+      "searchable": false,
+      "fillable": false,
+      "primary": true,
+      "inForm": false,
+      "inIndex": false,
+      "inView": false
+    },
+    {
+      "name": "programacion_id",
+      "dbType": "unsignedInteger:nullable:foreign,programacions,id",
+      "searchable": false,
+      "fillable": false,
+      "primary": false,
+      "inForm": false,
+      "inIndex": false,
+      "inView": false
+    },
+    {
+      "name": "turno",
+      "dbType": "string:nullable",
+      "htmlType": "text",
+      "validations": "required"
+    },
+    {
+      "name": "viaje",
+      "dbType": "string:nullable",
+      "htmlType": "text",
+      "validations": "required"
+    },
+    {
+      "name": "chofer_id",
+      "dbType": "unsignedInteger:nullable:foreign,users,id",
+      "htmlType": "selectTable:users:name,id",
+      "validations": "required",
+      "searchable": true,
+      "fillable": true,
+      "primary": false,
+      "inForm": true,
+      "inIndex": true,
+      "inView": true
+    },
+    {
+      "name": "auxiliar_id",
+      "dbType": "unsignedInteger:nullable:foreign,users,id",
+      "htmlType": "selectTable:users:name,id",
+      "validations": "required",
+      "searchable": true,
+      "fillable": true,
+      "primary": false,
+      "inForm": true,
+      "inIndex": true,
+      "inView": true
+    },
+    {
+      "name": "concentradora",
+      "dbType": "boolean:nullable",
+      "htmlType": "checkbox,1"
+    },
+    {
+      "name": "notas",
+      "dbType": "string:nullable",
+      "htmlType": "textarea|max:200",
+      "validations": "required"
+    },
+    {
+      "name": "created_at",
+      "dbType": "timestamp",
+      "htmlType": null,
+      "validations": null,
+      "searchable": false,
+      "fillable": false,
+      "primary": false,
+      "inForm": false,
+      "inIndex": true,
+      "inView": true
+    },
+    {
+      "name": "updated_at",
+      "dbType": "timestamp",
+      "htmlType": null,
+      "validations": null,
+      "searchable": false,
+      "fillable": false,
+      "primary": false,
+      "inForm": false,
+      "inIndex": false,
+      "inView": false
+    },
+    {
+      "name": "created_by",
+      "dbType": "unsignedBigInteger:nullable",
+      "htmlType": null,
+      "validations": null,
+      "searchable": false,
+      "fillable": false,
+      "primary": false,
+      "inForm": false,
+      "inIndex": false,
+      "inView": false
+    },
+    {
+      "name": "updated_by",
+      "dbType": "unsignedBigInteger:nullable",
+      "htmlType": null,
+      "validations": null,
+      "searchable": false,
+      "fillable": false,
+      "primary": false,
+      "inForm": false,
+      "inIndex": false,
+      "inView": false
+    },
+    {
+      "name": "deleted_by",
+      "dbType": "unsignedBigInteger:nullable",
+      "htmlType": null,
+      "validations": null,
+      "searchable": false,
+      "fillable": false,
+      "primary": false,
+      "inForm": false,
+      "inIndex": false,
+      "inView": false
+    }
+  ]

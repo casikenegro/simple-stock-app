@@ -1,0 +1,764 @@
+[
+  {
+    "name": "id",
+    "dbType": "increments",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": true,
+    "inForm": false,
+    "inIndex": false,
+    "inView": false
+  },
+  {
+    "name": "programacion_id",
+    "dbType": "unsignedInteger:foreign,requerimientos,id",
+    "htmlType": "selectTable:requerimientos:codigo,id",
+    "searchable": true,
+    "fillable": true,
+    "primary": false,
+    "inForm": true,
+    "inIndex": true,
+    "inView": true
+  },
+  {
+    "name": "nombre_responsable",
+    "dbType": "string:nullable",
+    "htmlType": "text"
+  },
+  {
+    "name": "fono_contacto",
+    "dbType": "string:nullable",
+    "htmlType": "text"
+  },
+  {
+    "name": "fecha",
+    "dbType": "date:nullable",
+    "htmlType": "date"
+  },
+  {
+    "name": "patente_camion",
+    "dbType": "unsignedInteger:nullable:foreign,vehiculos,id",
+    "htmlType": "selectTable:vehiculos:patente,id",
+    "searchable": true,
+    "fillable": true,
+    "primary": false,
+    "inForm": true,
+    "inIndex": true,
+    "inView": true
+  },
+  {
+    "name": "patente_estanque",
+    "dbType": "string:nullable",
+    "htmlType": "text"
+  },
+  {
+    "name": "odometro",
+    "dbType": "string:nullable",
+    "htmlType": "text"
+  },
+  {
+    "name": "revision_tecnica_tracto",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "fecha_revision_tecnica_tracto",
+    "dbType": "date:nullable",
+    "htmlType": "date",
+    "inIndex": false
+  },
+  {
+    "name": "revision_tecnica_estanque",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "fecha_revision_tecnica_estanque",
+    "dbType": "date:nullable",
+    "htmlType": "date",
+    "inIndex": false
+  },
+  {
+    "name": "poliza_seguro_tracto",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "fecha_poliza_seguro_tracto",
+    "dbType": "date:nullable",
+    "htmlType": "date",
+    "inIndex": false
+  },
+  {
+    "name": "poliza_seguro_estanque",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "fecha_poliza_seguro_estanque",
+    "dbType": "date:nullable",
+    "htmlType": "date",
+    "inIndex": false
+  },
+  {
+    "name": "permiso_circulacion_tracto",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "fecha_permiso_circulacion_tracto",
+    "dbType": "date:nullable",
+    "htmlType": "date",
+    "inIndex": false
+  },
+  {
+    "name": "permiso_circulacion_estanque",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "fecha_permiso_circulacion_estanque",
+    "dbType": "date:nullable",
+    "htmlType": "date",
+    "inIndex": false
+  },
+  {
+    "name": "procedimientos_trabajo_seguro",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "lista_asistencia",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "ast",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "certificado_minsal",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "check_list_camion",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "guias_de_despacho",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "logo_de_empresa",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "sticker_ultima_mantencion",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "lic_del_conductor",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "credencial_auxiliar",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "credencial_conductor",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "licencia_interna",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "seis_conos",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "cuatro_cunas",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "dos_extintor",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "gata_hidraulica",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "llave_de_rueda",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "triangulos",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "sanitizador",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "radio_transmisora",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "caja_de_herramientas",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "kit_de_invierno",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "botiquin",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "parabrisas",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "senor_somnolencia",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "ventanas",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "cinturon_seguridad",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "tercer_ojo",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "parachoque_delantero",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "parachoque_trasero",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "pertiga_y_baliza",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "retrovisores",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "checkpoint_de_rueda",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "kit_covid",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "observaciones",
+    "dbType": "string:nullable",
+    "htmlType": "textarea"
+  },
+  {
+    "name": "luces_altas_bajas",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "luces_intermitentes",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "luces_de_estacionamiento",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "luz_y_alarma_de_retroceso",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "luz_de_freno",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "sistema_de_frenos_tracto",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "fugas_de_aceite",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "fugas_de_refrigerante",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "fugas_de_aire",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "sistema_de_direccion",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "tablero_de_instrumentos",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "tapas_de_petroleo",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "guarda_fangos",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "pisaderas",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "plumillas",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "neumaticos_malos",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+      {
+        "name": "neumatico_malo_01",
+        "dbType": "boolean:default:0",
+        "htmlType": "checkbox,1",
+        "inIndex": false
+      },
+      {
+        "name": "neumatico_malo_02",
+        "dbType": "boolean:default:0",
+        "htmlType": "checkbox,1",
+        "inIndex": false
+      },
+      {
+        "name": "neumatico_malo_03",
+        "dbType": "boolean:default:0",
+        "htmlType": "checkbox,1",
+        "inIndex": false
+      },
+      {
+        "name": "neumatico_malo_04",
+        "dbType": "boolean:default:0",
+        "htmlType": "checkbox,1",
+        "inIndex": false
+      },
+      {
+        "name": "neumatico_malo_05",
+        "dbType": "boolean:default:0",
+        "htmlType": "checkbox,1",
+        "inIndex": false
+      },
+      {
+        "name": "neumatico_malo_06",
+        "dbType": "boolean:default:0",
+        "htmlType": "checkbox,1",
+        "inIndex": false
+      },
+      {
+        "name": "neumatico_malo_07",
+        "dbType": "boolean:default:0",
+        "htmlType": "checkbox,1",
+        "inIndex": false
+      },
+      {
+        "name": "neumatico_malo_08",
+        "dbType": "boolean:default:0",
+        "htmlType": "checkbox,1",
+        "inIndex": false
+      },
+      {
+        "name": "neumatico_malo_09",
+        "dbType": "boolean:default:0",
+        "htmlType": "checkbox,1",
+        "inIndex": false
+      },
+      {
+        "name": "neumatico_malo_10",
+        "dbType": "boolean:default:0",
+        "htmlType": "checkbox,1",
+        "inIndex": false
+      },
+  {
+    "name": "estado_de_tubo_escape",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "ac",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "baterias",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "reflectantes",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "logos",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "luces_intermitentes_2",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "luces_de_estacionamiento_2",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "luz_y_alarma_de_retroceso_2",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "luz_de_freno_2",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "parachoques",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "barra_lateral_anticiclista",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "llave_de_descarga_cuatro",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "estado_escotillas",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "estado_pasamanos",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "estado_de_ballestas",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "estado_escaleras",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "sistema_de_frenos",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "fugas_de_aire_2",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "reflectantes_2",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "neumaticos",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+        {
+          "name": "neumatico_malo_001",
+          "dbType": "boolean:default:0",
+          "htmlType": "checkbox,1",
+          "inIndex": false
+        },
+        {
+          "name": "neumatico_malo_002",
+          "dbType": "boolean:default:0",
+          "htmlType": "checkbox,1",
+          "inIndex": false
+        },
+        {
+          "name": "neumatico_malo_003",
+          "dbType": "boolean:default:0",
+          "htmlType": "checkbox,1",
+          "inIndex": false
+        },
+        {
+          "name": "neumatico_malo_004",
+          "dbType": "boolean:default:0",
+          "htmlType": "checkbox,1",
+          "inIndex": false
+        },
+        {
+          "name": "neumatico_malo_005",
+          "dbType": "boolean:default:0",
+          "htmlType": "checkbox,1",
+          "inIndex": false
+        },
+        {
+          "name": "neumatico_malo_006",
+          "dbType": "boolean:default:0",
+          "htmlType": "checkbox,1",
+          "inIndex": false
+        },
+        {
+          "name": "neumatico_malo_007",
+          "dbType": "boolean:default:0",
+          "htmlType": "checkbox,1",
+          "inIndex": false
+        },
+        {
+          "name": "neumatico_malo_008",
+          "dbType": "boolean:default:0",
+          "htmlType": "checkbox,1",
+          "inIndex": false
+        },
+        {
+          "name": "neumatico_malo_009",
+          "dbType": "boolean:default:0",
+          "htmlType": "checkbox,1",
+          "inIndex": false
+        },
+        {
+          "name": "neumatico_malo_010",
+          "dbType": "boolean:default:0",
+          "htmlType": "checkbox,1",
+          "inIndex": false
+        },
+        {
+          "name": "neumatico_malo_011",
+          "dbType": "boolean:default:0",
+          "htmlType": "checkbox,1",
+          "inIndex": false
+        },
+        {
+          "name": "neumatico_malo_012",
+          "dbType": "boolean:default:0",
+          "htmlType": "checkbox,1",
+          "inIndex": false
+        },
+  {
+    "name": "dos_neumaticos_de_repuesto",
+    "dbType": "boolean:nullable",
+    "htmlType": "radio,Si:1,No:0",
+    "inIndex": false
+  },
+  {
+    "name": "firma_responsable",
+    "dbType": "text:nullable",
+    "htmlType": "textarea"
+  },
+  {
+    "name": "firma_vb",
+    "dbType": "text:nullable",
+    "htmlType": "textarea"
+  },
+  {
+    "name": "created_at",
+    "dbType": "timestamp",
+    "htmlType": null,
+    "validations": null,
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "updated_at",
+    "dbType": "timestamp",
+    "htmlType": null,
+    "validations": null,
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false
+  },
+  {
+    "name": "created_by",
+    "dbType": "unsignedBigInteger:nullable",
+    "htmlType": null,
+    "validations": null,
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false,
+    "inView": false
+  },
+  {
+    "name": "updated_by",
+    "dbType": "unsignedBigInteger:nullable",
+    "htmlType": null,
+    "validations": null,
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false,
+    "inView": false
+  },
+  {
+    "name": "deleted_by",
+    "dbType": "unsignedBigInteger:nullable",
+    "htmlType": null,
+    "validations": null,
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false,
+    "inView": false
+  }
+]

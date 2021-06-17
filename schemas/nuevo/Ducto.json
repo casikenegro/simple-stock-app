@@ -1,0 +1,91 @@
+[
+  {
+    "name": "id",
+    "dbType": "increments",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": true,
+    "inForm": false,
+    "inIndex": false,
+    "inView": false
+  },
+  {
+    "name": "descripcion",
+    "dbType": "string",
+    "htmlType": "text",
+    "validations": "required"
+  },
+  {
+    "name": "tipo",
+    "dbType": "string",
+    "htmlType": "text",
+    "validations": "required"
+  },
+  {
+    "name": "activo",
+    "dbType": "boolean",
+    "htmlType": "checkbox,1"
+  },
+  {
+    "name": "created_at",
+    "dbType": "timestamp",
+    "htmlType": null,
+    "validations": null,
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": true,
+    "inView": true
+  },
+  {
+    "name": "updated_at",
+    "dbType": "timestamp",
+    "htmlType": null,
+    "validations": null,
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false,
+    "inView": false
+  },
+  {
+    "name": "created_by",
+    "dbType": "unsignedBigInteger:nullable",
+    "htmlType": null,
+    "validations": null,
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false,
+    "inView": false
+  },
+  {
+    "name": "updated_by",
+    "dbType": "unsignedBigInteger:nullable",
+    "htmlType": null,
+    "validations": null,
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false,
+    "inView": false
+  },
+  {
+    "name": "deleted_by",
+    "dbType": "unsignedBigInteger:nullable",
+    "htmlType": null,
+    "validations": null,
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false,
+    "inView": false
+  }
+]

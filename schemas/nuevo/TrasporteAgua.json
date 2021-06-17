@@ -1,0 +1,228 @@
+[
+  {
+    "name": "id",
+    "dbType": "increments",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": true,
+    "inForm": false,
+    "inIndex": false,
+    "inView": false
+  },
+  {
+    "name": "nro_guia",
+    "dbType": "string",
+    "htmlType": "text",
+    "validations": "required"
+  },
+  {
+    "name": "fecha_inicio",
+    "dbType": "dateTime",
+    "htmlType": "date",
+    "validations": "required",
+    "searchable": true
+  },
+  {
+    "name": "odometro_inicio",
+    "dbType": "string:nullable",
+    "htmlType": "text",
+    "inIndex": false,
+    "inView": false
+  },
+  {
+    "name": "lts_combustible",
+    "dbType": "string:nullable",
+    "htmlType": "text",
+    "inIndex": false,
+    "inView": false
+  },
+  {
+    "name": "medidor_inicio",
+    "dbType": "string:nullable",
+    "htmlType": "text",
+    "inIndex": false,
+    "inView": false
+  },
+  {
+    "name": "medidor_final",
+    "dbType": "string:nullable",
+    "htmlType": "text",
+    "inIndex": false,
+    "inView": false
+  },
+  {
+    "name": "nivel_cloro_inicio",
+    "dbType": "string:nullable",
+    "htmlType": "text",
+    "inIndex": false,
+    "inView": false
+  },
+  {
+    "name": "conductor",
+    "dbType": "unsignedInteger:foreign,users,id",
+    "htmlType": "selectTable:users:nombre,id",
+    "validations": "required",
+    "searchable": true,
+    "fillable": true,
+    "primary": false,
+    "inForm": true,
+    "inIndex": true,
+    "inView": true
+  },
+  {
+    "name": "auxiliar",
+    "dbType": "unsignedInteger:foreign,users,id",
+    "htmlType": "selectTable:users:nombre,id",
+    "validations": "required",
+    "searchable": true,
+    "fillable": true,
+    "primary": false,
+    "inForm": true,
+    "inIndex": true,
+    "inView": true
+  },
+  {
+    "name": "origen",
+    "dbType": "unsignedInteger:foreign,ductos,id",
+    "htmlType": "selectTable:ductos:descripcion,id",
+    "validations": "required",
+    "searchable": true,
+    "fillable": true,
+    "primary": false,
+    "inForm": true,
+    "inIndex": true,
+    "inView": true
+  },
+  {
+    "name": "destino",
+    "dbType": "unsignedInteger:foreign,ductos,id",
+    "htmlType": "selectTable:ductos:descripcion,id",
+    "validations": "required",
+    "searchable": true,
+    "fillable": true,
+    "primary": false,
+    "inForm": true,
+    "inIndex": true,
+    "inView": true
+  },
+  {
+    "name": "camion",
+    "dbType": "unsignedInteger:foreign,vehiculos,id",
+    "htmlType": "selectTable:vehiculos:patente,id",
+    "validations": "required",
+    "searchable": true,
+    "fillable": true,
+    "primary": false,
+    "inForm": true,
+    "inIndex": true,
+    "inView": true
+  },
+  {
+    "name": "acoplado",
+    "dbType": "unsignedInteger:foreign,vehiculos,id",
+    "htmlType": "selectTable:vehiculos:patente,id",
+    "validations": "required",
+    "searchable": true,
+    "fillable": true,
+    "primary": false,
+    "inForm": true,
+    "inIndex": true,
+    "inView": true
+  },
+  {
+    "name": "fecha_final",
+    "dbType": "dateTime:nullable",
+    "htmlType": "date",
+    "searchable": true
+  },
+  {
+    "name": "odometro_final",
+    "dbType": "string:nullable",
+    "htmlType": "text",
+    "inIndex": false,
+    "inView": false
+  },
+  {
+    "name": "nivel_cloro_final",
+    "dbType": "string:nullable",
+    "htmlType": "text",
+    "inIndex": false,
+    "inView": false
+  },
+  {
+    "name": "desviacion_observacion",
+    "dbType": "text:nullable",
+    "htmlType": "textarea",
+    "inIndex": false,
+    "inView": false
+  },
+  {
+    "name": "medidas_adoptadas",
+    "dbType": "text:nullable",
+    "htmlType": "textarea",
+    "inIndex": false,
+    "inView": false
+  },
+  {
+    "name": "created_at",
+    "dbType": "timestamp",
+    "htmlType": null,
+    "validations": null,
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": true,
+    "inView": true
+  },
+  {
+    "name": "updated_at",
+    "dbType": "timestamp",
+    "htmlType": null,
+    "validations": null,
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false,
+    "inView": false
+  },
+  {
+    "name": "created_by",
+    "dbType": "unsignedBigInteger:nullable",
+    "htmlType": null,
+    "validations": null,
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false,
+    "inView": false
+  },
+  {
+    "name": "updated_by",
+    "dbType": "unsignedBigInteger:nullable",
+    "htmlType": null,
+    "validations": null,
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false,
+    "inView": false
+  },
+  {
+    "name": "deleted_by",
+    "dbType": "unsignedBigInteger:nullable",
+    "htmlType": null,
+    "validations": null,
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false,
+    "inView": false
+  }
+]

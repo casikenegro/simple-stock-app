@@ -1,0 +1,117 @@
+[
+  {
+    "name": "id",
+    "dbType": "increments",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": true,
+    "inForm": false,
+    "inIndex": false,
+    "inView": false
+  },
+  {
+    "name": "patente",
+    "dbType": "string",
+    "htmlType": "text",
+    "validations": "required"
+  },
+  {
+    "name": "TipoVehiculo_id",
+    "dbType": "unsignedInteger:foreign,tipo_vehiculos,id",
+    "htmlType": "selectTable:tipo_vehiculos:nombre,id",
+    "validations": "required",
+    "searchable": true,
+    "fillable": true,
+    "primary": false,
+    "inForm": true,
+    "inIndex": true,
+    "inView": true
+  },
+  {
+    "name": "marca",
+    "dbType": "string:nullable",
+    "htmlType": "text"
+  },
+  {
+    "name": "modelo",
+    "dbType": "string:nullable",
+    "htmlType": "text"
+  },
+  {
+    "name": "nro_chasis",
+    "dbType": "string:nullable",
+    "htmlType": "text"
+  },
+  {
+    "name": "nro_motor",
+    "dbType": "string:nullable",
+    "htmlType": "text"
+  },
+  {
+    "name": "activo",
+    "dbType": "boolean",
+    "htmlType": "checkbox,1"
+  },
+  {
+    "name": "created_at",
+    "dbType": "timestamp",
+    "htmlType": null,
+    "validations": null,
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": true,
+    "inView": true
+  },
+  {
+    "name": "updated_at",
+    "dbType": "timestamp",
+    "htmlType": null,
+    "validations": null,
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false,
+    "inView": false
+  },
+  {
+    "name": "created_by",
+    "dbType": "unsignedBigInteger:nullable",
+    "htmlType": null,
+    "validations": null,
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false,
+    "inView": false
+  },
+  {
+    "name": "updated_by",
+    "dbType": "unsignedBigInteger:nullable",
+    "htmlType": null,
+    "validations": null,
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false,
+    "inView": false
+  },
+  {
+    "name": "deleted_by",
+    "dbType": "unsignedBigInteger:nullable",
+    "htmlType": null,
+    "validations": null,
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false,
+    "inView": false
+  }
+]

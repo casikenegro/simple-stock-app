@@ -1,0 +1,120 @@
+[
+  {
+    "name": "id",
+    "dbType": "increments",
+    "htmlType": "",
+    "validations": "",
+    "searchable": false,
+    "fillable": false,
+    "primary": true,
+    "inForm": false,
+    "inIndex": false,
+    "inView": false
+  },
+  {
+    "name": "rut",
+    "dbType": "string",
+    "htmlType": "text",
+    "validations": "required"
+  },
+  {
+    "name": "nombre",
+    "dbType": "string",
+    "htmlType": "text",
+    "validations": "required"
+  },
+  {
+    "name": "nacionalidad",
+    "dbType": "string",
+    "htmlType": "text",
+    "validations": "required"
+  },
+  {
+    "name": "sexo",
+    "dbType": "integer",
+    "htmlType": "radio,Masculino:1,Femenino:0"
+  },
+  {
+    "name": "departamento",
+    "dbType": "string",
+    "htmlType": "text",
+    "validations": "required"
+  },
+  {
+    "name": "cargo_id",
+    "dbType": "unsignedInteger:foreign,cargos,id",
+    "htmlType": "selectTable:cargos:nombre,id",
+    "validations": "required",
+    "searchable": true,
+    "fillable": true,
+    "primary": false,
+    "inForm": true,
+    "inIndex": true,
+    "inView": true
+  },
+  {
+    "name": "estado",
+    "dbType": "boolean",
+    "htmlType": "checkbox,1"
+  },
+  {
+    "name": "created_at",
+    "dbType": "timestamp",
+    "htmlType": null,
+    "validations": null,
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": true,
+    "inView": true
+  },
+  {
+    "name": "updated_at",
+    "dbType": "timestamp",
+    "htmlType": null,
+    "validations": null,
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false,
+    "inView": false
+  },
+  {
+    "name": "created_by",
+    "dbType": "unsignedBigInteger:nullable",
+    "htmlType": null,
+    "validations": null,
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false,
+    "inView": false
+  },
+  {
+    "name": "updated_by",
+    "dbType": "unsignedBigInteger:nullable",
+    "htmlType": null,
+    "validations": null,
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false,
+    "inView": false
+  },
+  {
+    "name": "deleted_by",
+    "dbType": "unsignedBigInteger:nullable",
+    "htmlType": null,
+    "validations": null,
+    "searchable": false,
+    "fillable": false,
+    "primary": false,
+    "inForm": false,
+    "inIndex": false,
+    "inView": false
+  }
+]
