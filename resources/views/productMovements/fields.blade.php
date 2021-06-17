@@ -1,21 +1,4 @@
-<div class="form-group col-sm-6">
-    {!! Form::label('product_id', __('models/productMovements.fields.product_id').':') !!}
-    <select class="form-control" name="product_id" id="product_id" >
-    <?php foreach ($products as $product): ?>
-        <?php if ($productMovement): ?>
-            <?php if ($productMovement->product->id === $product->id): ?>
-                <option selected value="{{$product->id}}">{{$product->code}} </option>
-            <?php else: ?>
-                <option value="{{$product->id}}">{{$product->code}} </option>
-            <?php endif; ?>
-        <?php else: ?>
-        <option value="{{$product->id}}">{{$product->code}} </option>
-        <?php endif; ?>
-
-    <?php endforeach; ?>
-    </select>
-</div>
-
+<select class="livesearch form-control" name="product_id"></select>
 
 <div class="form-group col-sm-6">
     {!! Form::label('quantity', __('models/productMovements.fields.quantity').':') !!}
@@ -62,3 +45,30 @@
     {!! Form::submit(__('crud.save'), ['class' => 'btn btn-primary']) !!}
     <a href="{{ route('movements.index') }}" class="btn btn-default">@lang('crud.cancel')</a>
 </div>
+
+@push('scripts')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+    <script type="text/javascript">
+    $('.livesearch').select2({
+        placeholder: 'code',
+        ajax: {
+            url: '/search',
+            dataType: 'json',
+            delay: 250,
+            processResults: function (data) {
+                return {
+                    results: $.map(data, function (item) {
+                        return {
+                            text: item.code,
+                            id: item.id
+                        }
+                    })
+                };
+            },
+            cache: true
+        }
+    });
+</script>
+@endpush

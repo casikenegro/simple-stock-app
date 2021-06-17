@@ -22,6 +22,7 @@ Route::resource('users', 'UserController')->middleware('auth');
 Route::resource('products', 'ProductController')->middleware('verified');
 Route::resource('movements', 'ProductMovementController')->middleware('verified');
 Route::get('download-movements', 'ProductMovementController@download')->middleware('verified');
+Route::get('/search', 'ProductController@selectSearch');
 
 
 

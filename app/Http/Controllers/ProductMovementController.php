@@ -44,6 +44,7 @@ class ProductMovementController extends Controller
             ->with('productMovements', $productMovements->get());
     }
 
+
     /**
      * Show the form for creating a new Product.
      *

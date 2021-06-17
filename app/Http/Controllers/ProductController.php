@@ -37,6 +37,19 @@ class ProductController extends AppBaseController
             ->with('products', $products);
     }
 
+    public function selectSearch(Request $request)
+    {
+    	$product = new Product;
+
+        if($request->has('q')){
+            error_log($request->q);
+            $search = $request->q;
+            $product =Product::select("id", "code")
+            		->where('code', 'LIKE', "%$search%");
+        }
+        return response()->json($product->get());
+    }
+
     /**
      * Show the form for creating a new Product.
      *
