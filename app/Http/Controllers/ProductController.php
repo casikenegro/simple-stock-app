@@ -44,11 +44,12 @@ class ProductController extends AppBaseController
         if($request->has('q')){
             error_log($request->q);
             $search = $request->q;
-            $product =Product::select("id", "code")
+            $product =Product::select("id", "code",'description')
             		->where('code', 'LIKE', "%$search%");
         }
         return response()->json($product->get());
     }
+
 
     /**
      * Show the form for creating a new Product.

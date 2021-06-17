@@ -1,4 +1,5 @@
-<select class="livesearch form-control" name="product_id"></select>
+<select class="livesearch form-control" name="product_id" id="search"></select>
+<input type="text" id='description' class="form-control"  />
 
 <div class="form-group col-sm-6">
     {!! Form::label('quantity', __('models/productMovements.fields.quantity').':') !!}
@@ -62,13 +63,18 @@
                     results: $.map(data, function (item) {
                         return {
                             text: item.code,
-                            id: item.id
+                            id: item.id,
+                            ...item,
                         }
                     })
                 };
             },
             cache: true
         }
-    });
+    }).on("select2:select", function (e) { 
+        document.getElementById('description').value = e.params.data.description;
+     });
+    </script>
+
 </script>
 @endpush
