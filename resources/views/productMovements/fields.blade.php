@@ -1,5 +1,4 @@
 <select class="livesearch form-control" name="product_id" id="search"></select>
-<input type="text" id='description' class="form-control"  />
 
 <div class="form-group col-sm-6">
     {!! Form::label('quantity', __('models/productMovements.fields.quantity').':') !!}
@@ -62,7 +61,7 @@
                 return {
                     results: $.map(data, function (item) {
                         return {
-                            text: item.code,
+                            text: `${item.code} - ${item.description}`,
                             id: item.id,
                             ...item,
                         }
@@ -71,9 +70,7 @@
             },
             cache: true
         }
-    }).on("select2:select", function (e) { 
-        document.getElementById('description').value = e.params.data.description;
-     });
+    })
     </script>
 
 </script>
