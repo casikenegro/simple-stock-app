@@ -43,13 +43,19 @@ class ProductController extends AppBaseController
         $products = new Product;
 
         if($request->search){
-           
             $products = $products->where(array_search($request->typeSearch,$typeSerch),'LIKE','%'.$request->search.'%');
         }
-        $products = $products->orderBy('current_stock', 'asc');
+        if($request->orderBy){
+            $products = $products->orderBy(array_search($request->typeSearch,$typeSerch),$request->orderBy);
+        }else{
+            $products = $products->orderBy('current_stock', 'asc');
+        }
         return view('products.index')
             ->with('products', $products->get())
-            ->with('searchs',$typeSerch);    
+            ->with('searchs',$typeSerch)
+            ->with('orderBy',['asc','desc']);    
+
+
     }
 
     public function selectSearch(Request $request)
@@ -57,7 +63,6 @@ class ProductController extends AppBaseController
     	$product = new Product;
 
         if($request->has('q')){
-            error_log($request->q);
             $search = $request->q;
             $product =Product::select("id", "code",'description')
             		->where('code', 'LIKE', "%$search%");
