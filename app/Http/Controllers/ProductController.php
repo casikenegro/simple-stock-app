@@ -30,11 +30,26 @@ class ProductController extends AppBaseController
      */
     public function index(Request $request)
     {
-   
-        $products = Product::orderBy('current_stock', 'asc')->get();
+        $typeSerch =   array (
+            "code"=>'Codigo', 
+            "unit"=>'Unidad',
+            "description"=>'Descripcion', 
+            "current_stock"=>"Stock Actual",
+            "min_stock"=>'Stock Minimo',
+            "max_stock"=>'Maximo Stock',
+            "point_order"=>'Punto de re-orden', 
+            "value"=>'Valor',
+        );
+        $products = new Product;
 
+        if($request->search){
+           
+            $products = $products->where(array_search($request->typeSearch,$typeSerch),'LIKE','%'.$request->search.'%');
+        }
+        $products = $products->orderBy('current_stock', 'asc');
         return view('products.index')
-            ->with('products', $products);
+            ->with('products', $products->get())
+            ->with('searchs',$typeSerch);    
     }
 
     public function selectSearch(Request $request)

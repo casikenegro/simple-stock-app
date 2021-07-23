@@ -41,19 +41,20 @@ class ProductMovementController extends Controller
             "is_valid"=>"Estado del Movimiento",
             "ot"=>"OT"
         );
-        error_log($request->search);
-        error_log($request->typeSearch);
-        error_log(array_search($request->typeSearch,$typeSerch));
         if($request->search){
             if(array_search($request->typeSearch,$typeSerch) === "product_id"){
-                $product = Product::where("code",$request->search)->first();
-                $productMovements = $productMovements->where("product_id",$product->id);
+                $products = Product::where("code",'LIKE','%'.$request->search.'%')->get();
+                $products = $products->map(function($product){
+                    return $product->id;
+                });
+                $productMovements = $productMovements->whereIn("product_id",$products);
             } else{
-                $productMovements = $productMovements->where(array_search($request->typeSearch,$typeSerch),$request->search);
+                $productMovements = $productMovements->where(array_search($request->typeSearch,$typeSerch),'LIKE','%'.$request->search.'%');
             }
         }
-        if($request->init_date && $request->last_date)
+        if($request->init_date && $request->last_date){
             $productMovements = $productMovements->whereBetween("created_at",[$request->init_date,$request->last_date ]);
+        }
         return view('productMovements.index')
             ->with('productMovements', $productMovements->get())
             ->with('searchs',$typeSerch);

@@ -9,6 +9,18 @@
              @include('flash::message')
              <div class="row">
                  <div class="col-lg-12">
+                 <form action="/products" method="GET" name="form" id="form" >
+                                {{-- @csrf --}}
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder="buscar"  name="search" aria-label="search" aria-describedby="button-addon2">
+                                    <select class="form-control" name="typeSearch" id="typeSearch" >
+                                        <?php foreach ($searchs as $data): ?>
+                                            <option value="{{$data}}">{{$data}} </option>
+                                        <?php endforeach; ?>
+                                        </select>
+                                    <button  type="submit" id="ot" value="enviar" class="btn btn-primary"  >buscar</button>
+                                </div>
+                            </form>
                      <div class="card">
                          <div class="card-header">
                              <i class="fa fa-align-justify"></i>
