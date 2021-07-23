@@ -13,6 +13,7 @@ return array (
     "retry_name"=>"Nombre de Quien Retira",
     "document"=>"Documento",
     "employee"=>"Bodeguero",
+    "is_valid"=>"Estado del Movimiento",
     "ot"=>"OT"
   ),
 );

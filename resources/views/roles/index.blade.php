@@ -30,32 +30,6 @@
                                     <tr>
                                         <td>{{ $role->id }}</td>
                                         <td>{{ $role->name }}</td>
-                                        <td width="10px">
-                                            @hasanyrole('admin|jefe operaciones')
-                                                <a href="{{ route('roles.show', $role->id) }}"
-                                                    class="btn btn-sm btn-primary">
-                                                    Ver
-                                                </a>
-                                            @endhasanyrole
-                                        </td>
-                                        <td width="10px">
-                                            @hasanyrole('admin|jefe operaciones')
-                                                <a href="{{ route('roles.edit', $role->id) }}"
-                                                    class="btn btn-sm btn-success">
-                                                    Editar
-                                                </a>
-                                            @endhasanyrole
-                                        </td>
-                                        <td width="10px">
-                                            @hasanyrole('admin|jefe operaciones')
-                                                {!! Form::open(['route' => ['roles.destroy', $role->id],
-                                                'method' => 'DELETE', 'onsubmit' => "return confirm('¿Desea eliminar el rol $role->name?');"]) !!}
-                                                <button type="submit" class="btn btn-danger btn-sm" data-hint="Eliminar Rol">
-                                                    Eliminar
-                                                </button>
-                                                {!! Form::close() !!}
-                                            @endhasanyrole
-                                        </td>
                                     </tr>
                                     @endforeach
                                 </tbody>          

@@ -26,6 +26,10 @@
     <p>{{ $productMovement->ot }}</p>
 </div>
 <div class="form-group">
+    {!! Form::label('is_valid', __('models/productMovements.fields.is_valid').':') !!}
+    <p>{{ $productMovement->is_valid }}</p>
+</div>
+<div class="form-group">
     {!! Form::label('employee', __('models/productMovements.fields.employee').':') !!}
     <p>{{ $productMovement->employee }}</p>
 </div>

@@ -16,7 +16,8 @@ class ProductMovement extends Model
         "document",
         "employee",
         "created_at", 
-        "ot"
+        "ot",
+        "is_valid"
     ];
 
     /**
@@ -32,6 +33,7 @@ class ProductMovement extends Model
         "retry_name"=>'string',
         "document"=>'string',
         "employee"=>'string',
+        "is_valid",
         "ot"
 
     ];

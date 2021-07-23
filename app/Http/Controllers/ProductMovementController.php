@@ -54,7 +54,9 @@ class ProductMovementController extends Controller
     {
         $data = Product::all();
 
-        return view('productMovements.create')->with("products",$data)->with("typeMovements",["Entrada","Salida"])->with("productMovement",false);
+        return view('productMovements.create')->with("products",$data)
+            ->with("typeMovements",["Entrada","Salida"])->with("productMovement",false)
+            ->with("booleans",["Valido","Invalido"]);
     }
 
     /**
@@ -142,7 +144,10 @@ class ProductMovementController extends Controller
             return redirect(route('movements.index'));
         }
 
-        return view('productMovements.edit')->with('productMovement', $productMovement)->with("products",$data)->with("typeMovements",["Entrada","Salida"]);
+        return view('productMovements.edit')
+            ->with('productMovement', $productMovement)
+            ->with("products",$data)->with("typeMovements",["Entrada","Salida"])
+            ->with("booleans",["Valido","Invalido"]);
     }
 
     /**
@@ -160,17 +165,6 @@ class ProductMovementController extends Controller
             return redirect(route('movements.index'));
         }
         $this->productMovement->update($request->all(), $id);
-        $product = Product::find($request->product_id);
-        if($request->movement === "Entrada"){
-            $product->current_stock = $product->current_stock + $request->quantity;
-        }else{
-            if($request->quantity > $product->current_stock ){
-                $product->current_stock = 0;
-            }
-            $product->current_stock = $product->current_stock - $request->quantity;
-        }
-        $product->save();
-
         Flash::success(__('messages.updated', ['model' => __('models/productMovements.singular')]));
 
         return redirect(route('movements.index'));

@@ -2,7 +2,7 @@
 
 <div class="form-group col-sm-6">
     {!! Form::label('quantity', __('models/productMovements.fields.quantity').':') !!}
-    {!! Form::number('quantity', null, ['class' => 'form-control']) !!}
+    {!! Form::number('quantity', null, ['class' => 'form-control','disabled'=>true]) !!}
 </div>
 <div class="form-group col-sm-6">
     {!! Form::label('retry_name', __('models/productMovements.fields.retry_name').':') !!}
@@ -21,6 +21,21 @@
     {!! Form::label('ot', __('models/productMovements.fields.ot').':') !!}
     {!! Form::text('ot', null, ['class' => 'form-control']) !!}
 </div>
+<div class="form-group col-sm-6">
+    {!! Form::label('is_valid', __('models/productMovements.fields.is_valid').':') !!}
+    <select class="form-control" name="is_valid" id="is_valid" >
+        <?php foreach ($booleans as $boolean): ?>
+            <?php if ($productMovement): ?>
+                <?php if ($productMovement->is_valid === $boolean): ?>
+                    <option selected value="{{$boolean}}">{{$boolean}} </option>
+                <?php else: ?>
+                    <option  value="{{$boolean}}">{{$boolean}} </option>
+                <?php endif; ?>
+            <?php else: ?>
+            <option value="{{$boolean}}">{{$boolean}} </option>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    </select></div>
 <div class="form-group col-sm-6">
     {!! Form::label('movement', __('models/productMovements.fields.movement').':') !!}
     <select class="form-control" name="movement" id="movement" >
