@@ -8,7 +8,7 @@ return array (
     'id' => 'Id',
     "product_id"=>"Producto", 
     "movement"=>"Movimiento",
-    "quantity"=>"cantidad",
+    "quantity"=>"Cantidad",
     "created_at"=>"Fecha de creacion",
     "retry_name"=>"Nombre de Quien Retira",
     "document"=>"Documento",

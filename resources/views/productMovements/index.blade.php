@@ -28,18 +28,15 @@
                             <form action="/movements" method="GET" name="form" id="form" >
                                 {{-- @csrf --}}
                                 <div class="input-group mb-3">
-                                    <input type="text" class="form-control" placeholder="OT"  name="ot" aria-label="ot" aria-describedby="button-addon2">
+                                    <input type="text" class="form-control" placeholder="buscar"  name="search" aria-label="search" aria-describedby="button-addon2">
+                                    <select class="form-control" name="typeSearch" id="typeSearch" >
+                                        <?php foreach ($searchs as $data): ?>
+                                            <option value="{{$data}}">{{$data}} </option>
+                                        <?php endforeach; ?>
+                                        </select>
                                     <button  type="submit" id="ot" value="enviar" class="btn btn-primary"  >buscar</button>
                                 </div>
                             </form>
-                            <form action="/movements" method="GET" name="code_form" id="code_form" >
-                                {{-- @csrf --}}
-                                <div class="input-group mb-3">
-                                    <input type="text" class="form-control" placeholder="code"  name="code" aria-label="code" aria-describedby="button-addon2">
-                                    <button  type="submit" id="ot" value="enviar" class="btn btn-primary"  >buscar</button>
-                                </div>
-                            </form>
-                         </div>
                          <div class="card-body">
                              @include('productMovements.table')
                               <div class="pull-right mr-3">
