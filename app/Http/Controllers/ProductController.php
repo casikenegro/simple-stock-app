@@ -54,8 +54,6 @@ class ProductController extends AppBaseController
             ->with('products', $products->get())
             ->with('searchs',$typeSerch)
             ->with('orderBy',['asc','desc']);    
-
-
     }
 
     public function selectSearch(Request $request)
