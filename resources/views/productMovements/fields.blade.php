@@ -2,7 +2,7 @@
 
 <div class="form-group col-sm-6">
     {!! Form::label('quantity', __('models/productMovements.fields.quantity').':') !!}
-    {!! Form::number('quantity', null, ['class' => 'form-control','disabled'=>true]) !!}
+    {!! Form::number('quantity', null, ['class' => 'form-control') !!}
 </div>
 <div class="form-group col-sm-6">
     {!! Form::label('retry_name', __('models/productMovements.fields.retry_name').':') !!}
