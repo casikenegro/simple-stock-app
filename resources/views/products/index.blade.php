@@ -18,11 +18,6 @@
                                             <option value="{{$data}}">{{$data}} </option>
                                         <?php endforeach; ?>
                                     </select>
-                                    <select class="form-control" name="orderBy" id="orderBy" >
-                                        <?php foreach ($orderBy as $data): ?>
-                                            <option value="{{$data}}">{{$data}} </option>
-                                        <?php endforeach; ?>
-                                    </select>
                                     <button  type="submit" id="ot" value="enviar" class="btn btn-primary"  >buscar</button>
                                 </div>
                             </form>

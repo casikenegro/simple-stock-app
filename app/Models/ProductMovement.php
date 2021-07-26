@@ -3,9 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Kyslik\ColumnSortable\Sortable;
 
 class ProductMovement extends Model
 {
+    use Sortable;
+
     public $table = 'product_movements';
 
     public $fillable = [
@@ -18,6 +21,18 @@ class ProductMovement extends Model
         "created_at", 
         "ot",
         "is_valid"
+    ];
+    public $sortable =[
+        "product_id", 
+        "movement",
+        "quantity", 
+        "retry_name",
+        "document",
+        "employee",
+        "created_at", 
+        "ot",
+        "is_valid",
+        'created_at'
     ];
 
     /**

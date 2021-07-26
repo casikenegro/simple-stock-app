@@ -55,13 +55,9 @@ class ProductMovementController extends Controller
         if($request->init_date && $request->last_date){
             $productMovements = $productMovements->whereBetween("created_at",[$request->init_date,$request->last_date ]);
         }
-        if($request->orderBy){
-            $productMovements = $productMovements->orderBy(array_search($request->typeSearch,$typeSerch),$request->orderBy);
-        }
         return view('productMovements.index')
             ->with('productMovements', $productMovements->get())
-            ->with('searchs',$typeSerch)
-            ->with('orderBy',['asc','desc']);           
+            ->with('searchs',$typeSerch);
     }
 
 

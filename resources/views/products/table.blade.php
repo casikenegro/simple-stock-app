@@ -2,14 +2,14 @@
     <table class="table table-striped" id="products-table">
         <thead>
             <tr>
-                <th>@lang('models/products.fields.code')</th>
-                <th>@lang('models/products.fields.unit')</th>
-                <th>@lang('models/products.fields.description')</th>
-                <th>@lang('models/products.fields.current_stock')</th>
-                <th>@lang('models/products.fields.min_stock')</th>
-                <th>@lang('models/products.fields.max_stock')</th>
-                <th>@lang('models/products.fields.point_order')</th>
-                <th>@lang('models/products.fields.value')</th>
+                <th>@sortablelink('code','Codigo')</th>
+                <th>@sortablelink('unit','Unidad')</th>
+                <th>@sortablelink('description','Descripcion')</th>
+                <th>@sortablelink('current_stock','Stock Actual')</th>
+                <th>@sortablelink('min_stock','Stock Minimo')</th>
+                <th>@sortablelink('max_stock','Maximo Stock')</th>
+                <th>@sortablelink('point_order','Punto de re-orden')</th>
+                <th>@sortablelink('value','Valor')</th>
             </tr>
         </thead>
         <tbody>

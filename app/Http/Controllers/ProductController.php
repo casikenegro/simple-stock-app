@@ -41,20 +41,14 @@ class ProductController extends AppBaseController
             "value"=>'Valor',
         );
         $products = new Product;
-
+        $products = $products->sortable();
         if($request->search){
             $products = $products->where(array_search($request->typeSearch,$typeSerch),'LIKE','%'.$request->search.'%');
         }
-        if($request->orderBy){
-            $products = $products->orderBy(array_search($request->typeSearch,$typeSerch),$request->orderBy);
-        }else{
-            $products = $products->orderBy('current_stock', 'asc');
-        }
         return view('products.index')
             ->with('products', $products->get())
-            ->with('searchs',$typeSerch)
-            ->with('orderBy',['asc','desc']);    
-    }
+            ->with('searchs',$typeSerch);
+        }
 
     public function selectSearch(Request $request)
     {

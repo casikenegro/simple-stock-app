@@ -4,13 +4,13 @@
             <tr>
                 <th>@lang('models/productMovements.fields.product_id')</th>
                 <th>@lang('models/productMovements.fields.movement')</th>
-                <th>@lang('models/productMovements.fields.quantity')</th>
-                <th>@lang('models/productMovements.fields.retry_name')</th>
-                <th>@lang('models/productMovements.fields.document')</th>
-                <th>@lang('models/productMovements.fields.employee')</th>
-                <th>@lang('models/productMovements.fields.ot')</th>
+                <th>@sortablelink('quantity','Cantidad')</th>
+                <th>@sortablelink('retry_name','Nombre de Quien Retira')</th>
+                <th>@sortablelink('document','Documento')</th>
+                <th>@sortablelink('employee','Bodeguero')</th>
+                <th>@sortablelink('ot','OT')</th>
                 <th>@lang('models/productMovements.fields.is_valid')</th>
-                <th>@lang('models/productMovements.fields.created_at')</th>
+                <th>@lang('models/productMovements.fields.created_at',)</th>
 
             </tr>
         </thead>
