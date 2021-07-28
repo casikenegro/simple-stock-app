@@ -8,7 +8,8 @@ use App\Repositories\ProductRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use App\Models\Product;
-
+use App\Exports\ProductsExport;
+use Maatwebsite\Excel\Facades\Excel;
 use Flash;
 use Response;
 
@@ -32,13 +33,7 @@ class ProductController extends AppBaseController
     {
         $typeSerch =   array (
             "code"=>'Codigo', 
-            "unit"=>'Unidad',
             "description"=>'Descripcion', 
-            "current_stock"=>"Stock Actual",
-            "min_stock"=>'Stock Minimo',
-            "max_stock"=>'Maximo Stock',
-            "point_order"=>'Punto de re-orden', 
-            "value"=>'Valor',
         );
         $products = new Product;
         $products = $products->sortable();
@@ -154,6 +149,19 @@ class ProductController extends AppBaseController
         Flash::success(__('messages.updated', ['model' => __('models/products.singular')]));
 
         return redirect(route('products.index'));
+    }
+
+    public function download(Request $request){
+        $products = new Product;
+      
+        if($request->init_date && $request->last_date){
+            $products = $products->whereBetween("created_at",[$request->init_date,$request->last_date ]);
+        }
+        if($request->download){
+            return  Excel::download(new ProductsExport($products), 'products.xlsx');
+        }
+        return view('products.download')
+            ->with('products', $products->get());
     }
 
     /**

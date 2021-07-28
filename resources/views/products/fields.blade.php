@@ -16,22 +16,22 @@
 
 <div class="form-group col-sm-6">
     {!! Form::label('min_stock', __('models/products.fields.min_stock').':') !!}
-    {!! Form::number('min_stock', null, ['class' => 'form-control']) !!}
+    {!! Form::number('min_stock', null, ['class' => 'form-control', 'step'=>0.01]) !!}
 </div>
 
 <div class="form-group col-sm-6">
     {!! Form::label('max_stock', __('models/products.fields.max_stock').':') !!}
-    {!! Form::number('max_stock', null, ['class' => 'form-control']) !!}
+    {!! Form::number('max_stock', null, ['class' => 'form-control', 'step'=>0.01]) !!}
 </div>
 
 <div class="form-group col-sm-6">
     {!! Form::label('current_stock', __('models/products.fields.current_stock').':') !!}
-    {!! Form::number('current_stock', null, ['class' => 'form-control']) !!}
+    {!! Form::number('current_stock', null, ['class' => 'form-control','step'=>0.01]) !!}
 </div>
 
 <div class="form-group col-sm-6">
     {!! Form::label('point_order', __('models/products.fields.point_order').':') !!}
-    {!! Form::number('point_order', null, ['class' => 'form-control']) !!}
+    {!! Form::number('point_order', null, ['class' => 'form-control','step'=>0.01]) !!}
 </div>
 
 <div class="form-group col-sm-6">
