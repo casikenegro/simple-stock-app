@@ -21,12 +21,12 @@
 </li>
 
 <li class="nav-item ">
-    <a class="nav-link" data-toggle="collapse" href="#settings">
+    <a class="nav-link" data-toggle="collapse" href="#dwonload">
         <i class="nav-icon icon-arrow-down"></i>
         <span>Descargar Documentos</span>
     </a>
 </li>
-<div class="collapse multi-collapse" id="settings" style="background-color: #57626b">
+<div class="collapse multi-collapse" id="dwonload" style="background-color: #57626b">
     <li class="nav-item {{ Request::is('movements*') ? 'active' : '' }}">
         <a class="nav-link" href="/download-movements">
             <i class="nav-icon icon-cursor"></i>
