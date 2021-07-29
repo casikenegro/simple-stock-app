@@ -22,11 +22,13 @@
                                 </div>
                             </form>
                      <div class="card">
+                        @hasanyrole('admin')
                          <div class="card-header">
                              <i class="fa fa-align-justify"></i>
                              @lang('models/products.plural')
                              <a class="pull-right btn btn-primary" role="button" href="{{ route('products.create') }}"><i class="fa fa-plus"></i> Añadir</a>
                          </div>
+                         @endhasanyrole
                          <div class="card-body">
                              @include('products.table')
                               <div class="pull-right mr-3">
