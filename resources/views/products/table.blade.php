@@ -25,13 +25,15 @@
             <td>{{ $product->value }}</td>
             {{-- <td>{{ $product->created_at }}</td> --}}
                 <td>
-                    {!! Form::open(['route' => ['products.destroy', $product->id], 'method' => 'delete']) !!}
+                 @hasanyrole('admin')
+                 {!! Form::open(['route' => ['products.destroy', $product->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
                         <a href="{{ route('products.show', [$product->id]) }}" class='btn btn-ghost-success'><i class="fa fa-eye"></i></a>
                         <a href="{{ route('products.edit', [$product->id]) }}" class='btn btn-ghost-info'><i class="fa fa-edit"></i></a>
                         {!! Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-ghost-danger', 'onclick' => 'return confirm("'.__('crud.are_you_sure').'")']) !!}
                     </div>
                     {!! Form::close() !!}
+                    @endhasanyrole
                 </td>
             </tr>
         @endforeach
