@@ -31,19 +31,16 @@ class ProductController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $typeSerch =   array (
-            "code"=>'Codigo', 
-            "description"=>'Descripcion', 
-        );
         $products = new Product;
         $products = $products->sortable();
         if($request->search){
-            $products = $products->where(array_search($request->typeSearch,$typeSerch),'LIKE','%'.$request->search.'%');
+                $search = $request->search;
+                $products = $products->where('code', 'LIKE', "%$search%")
+                        ->orWhere('description', 'LIKE', "%$search%");
         }
         return view('products.index')
-            ->with('products', $products->get())
-            ->with('searchs',$typeSerch);
-        }
+            ->with('products', $products->get());
+    }
 
     public function selectSearch(Request $request)
     {

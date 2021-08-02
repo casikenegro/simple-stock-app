@@ -31,33 +31,19 @@ class ProductMovementController extends Controller
     {
 
         $productMovements = new ProductMovement;
-        $typeSerch =   array (
-            "product_id"=>"Producto", 
-            "movement"=>"Movimiento",
-            "quantity"=>"Cantidad",
-            "retry_name"=>"Nombre de Quien Retira",
-            "document"=>"Documento",
-            "employee"=>"Bodeguero",
-            "is_valid"=>"Estado del Movimiento",
-            "ot"=>"OT"
-        );
+    
         if($request->search){
-            if(array_search($request->typeSearch,$typeSerch) === "product_id"){
-                $products = Product::where("code",'LIKE','%'.$request->search.'%')->get();
-                $products = $products->map(function($product){
-                    return $product->id;
-                });
-                $productMovements = $productMovements->whereIn("product_id",$products);
-            } else{
-                $productMovements = $productMovements->where(array_search($request->typeSearch,$typeSerch),'LIKE','%'.$request->search.'%');
-            }
+            $search = $request->search;
+            $products =Product::select("id", "code",'description')
+            ->where('code', 'LIKE', "%$search%")
+            ->orWhere('description', 'LIKE', "%$search%")->get();
+            $productMovements = $productMovements->whereIn("product_id",$products);
         }
         if($request->init_date && $request->last_date){
             $productMovements = $productMovements->whereBetween("created_at",[$request->init_date,$request->last_date ]);
         }
         return view('productMovements.index')
-            ->with('productMovements', $productMovements->get())
-            ->with('searchs',$typeSerch);
+            ->with('productMovements', $productMovements->get());
     }
 
 
