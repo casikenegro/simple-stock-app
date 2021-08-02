@@ -52,7 +52,8 @@ class ProductController extends AppBaseController
         if($request->has('q')){
             $search = $request->q;
             $product =Product::select("id", "code",'description')
-            		->where('code', 'LIKE', "%$search%");
+            		->where('code', 'LIKE', "%$search%")
+                    ->orWhere('description', 'LIKE', "%$search%");
         }
         return response()->json($product->get());
     }
