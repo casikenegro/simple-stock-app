@@ -17,7 +17,7 @@
         <tbody>
         @foreach($productMovements as $movement)
             <tr>
-                <td>{{ $movement->product->code }}</td>
+                <td>{{ $movement->product->code }} - {{$movement->product->description}}</td>
             <td>{{ $movement->movement }}</td>
             <td>{{ $movement->quantity }}</td>
             <td>{{ $movement->retry_name }}</td>
